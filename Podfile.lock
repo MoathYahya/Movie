@@ -1,0 +1,34 @@
+PODS:
+  - Cosmos (23.0.0)
+  - ImageViewer.swift (3.3.3)
+  - JGProgressHUD (2.2)
+  - Popover (1.3.0)
+  - SDWebImage (5.12.3):
+    - SDWebImage/Core (= 5.12.3)
+  - SDWebImage/Core (5.12.3)
+
+DEPENDENCIES:
+  - Cosmos (~> 23.0)
+  - ImageViewer.swift (~> 3.0)
+  - JGProgressHUD
+  - Popover
+  - SDWebImage (~> 5.0)
+
+SPEC REPOS:
+  trunk:
+    - Cosmos
+    - ImageViewer.swift
+    - JGProgressHUD
+    - Popover
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
+  ImageViewer.swift: 3dbb74a68ac4bdd6cdd585b3128dae17ccd733e5
+  JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
+  Popover: 10e1d9528f81d9504df984b7b3f491292bc1822d
+  SDWebImage: 53179a2dba77246efa8a9b85f5c5b21f8f43e38f
+
+PODFILE CHECKSUM: 62abe3702bf666ee472777c1bc1745b3504d2484
+
+COCOAPODS: 1.11.2
