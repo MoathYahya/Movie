@@ -17,4 +17,6 @@ query GetMoviesQuery {
       order
     }
   }
+  
+  genres
 }

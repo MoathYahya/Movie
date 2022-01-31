@@ -30,6 +30,7 @@ public final class GetMoviesQueryQuery: GraphQLQuery {
           order
         }
       }
+      genres
     }
     """
 
@@ -44,6 +45,7 @@ public final class GetMoviesQueryQuery: GraphQLQuery {
     public static var selections: [GraphQLSelection] {
       return [
         GraphQLField("movies", type: .list(.object(Movie.selections))),
+        GraphQLField("genres", type: .nonNull(.list(.nonNull(.scalar(String.self))))),
       ]
     }
 
@@ -53,8 +55,8 @@ public final class GetMoviesQueryQuery: GraphQLQuery {
       self.resultMap = unsafeResultMap
     }
 
-    public init(movies: [Movie?]? = nil) {
-      self.init(unsafeResultMap: ["__typename": "Query", "movies": movies.flatMap { (value: [Movie?]) -> [ResultMap?] in value.map { (value: Movie?) -> ResultMap? in value.flatMap { (value: Movie) -> ResultMap in value.resultMap } } }])
+    public init(movies: [Movie?]? = nil, genres: [String]) {
+      self.init(unsafeResultMap: ["__typename": "Query", "movies": movies.flatMap { (value: [Movie?]) -> [ResultMap?] in value.map { (value: Movie?) -> ResultMap? in value.flatMap { (value: Movie) -> ResultMap in value.resultMap } } }, "genres": genres])
     }
 
     public var movies: [Movie?]? {
@@ -63,6 +65,15 @@ public final class GetMoviesQueryQuery: GraphQLQuery {
       }
       set {
         resultMap.updateValue(newValue.flatMap { (value: [Movie?]) -> [ResultMap?] in value.map { (value: Movie?) -> ResultMap? in value.flatMap { (value: Movie) -> ResultMap in value.resultMap } } }, forKey: "movies")
+      }
+    }
+
+    public var genres: [String] {
+      get {
+        return resultMap["genres"]! as! [String]
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "genres")
       }
     }
 

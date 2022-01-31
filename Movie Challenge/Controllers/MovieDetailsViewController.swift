@@ -13,7 +13,7 @@ import ImageViewer_swift
 
 class MovieDetailsViewController: UIViewController {
 
-    var movieModel: GetMoviesQueryQuery.Data.Movie?
+    var movieModel : GetMoviesQueryQuery.Data.Movie?
     
     @IBOutlet private weak var movieLbl     : UILabel!
     @IBOutlet private weak var cosmosView   : CosmosView!
